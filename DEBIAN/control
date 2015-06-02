@@ -1,0 +1,9 @@
+Package: com.monolith.NoTabLabels
+Name: NoTabLabels
+Depends: com.johncoates.monolith, firmware (>> 8.0)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Removes tab labels from tab bar items.
+Maintainer: John Coates
+Author: John Coates
+Section: Tweaks
