@@ -28,7 +28,11 @@ end
 
 if which("dpkg-deb") == nil
   puts "dpkg not detected, install? y/n"
-  response = gets.chomp
+  # for some reason i got undefined method `chomp' for nil:NilClass (NoMethodError) to solve it i added the following
+  # taken from http://stackoverflow.com/a/13668211/1447546
+  response = gets
+  response ||= ''
+  response.chomp!
   
   if response[0] == "y"
     if which("brew") == nil
