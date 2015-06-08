@@ -3,7 +3,7 @@
 # configure with your device's IP
 # make sure you can SSH in without a password
 # use this tutorial: http://www.priyaontech.com/2012/01/ssh-into-your-jailbroken-idevice-without-a-password/
-deviceIP = "192.168.1.161"
+deviceIP = "192.168.1.153"
 
 
 require 'fileutils'
@@ -66,11 +66,10 @@ Dir.chdir(File.dirname(__FILE__)) do
     FileUtils.mkdir_p("./_/DEBIAN/")
     FileUtils.copy_file(src="../DEBIAN/control", dst="./_/DEBIAN/control")
     
-    filename = "NoTabLabels_1.0.deb"
-    
     # remove .DS_Store files
     system "find ./_/ -name '*.DS_Store' -type f -delete"
     
+    filename = "NoTabLabels_1.0.deb"    
     system "dpkg-deb", "-b", "-Zgzip", "_", filename
     
     # transfer deb
