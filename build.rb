@@ -17,7 +17,6 @@ def which(cmd)
   ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
     exts.each { |ext|
       exe = File.join(path, "#{cmd}#{ext}")
-      puts exe
       return exe if File.executable?(exe) && !File.directory?(exe)
     }
   end
@@ -28,7 +27,7 @@ end
 
 if which("dpkg-deb") == nil
   puts "dpkg not detected, install? y/n"
-  # for some reason i got undefined method `chomp' for nil:NilClass (NoMethodError) to solve it i added the following
+  # @iMokhles finds that gets returns nil, this neuters that bug
   # taken from http://stackoverflow.com/a/13668211/1447546
   response = gets
   response ||= ''
