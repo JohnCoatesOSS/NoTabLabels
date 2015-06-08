@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Monolith/Monolith.h>
 
-@interface NTLTabBarItem : MNOHook
+@interface NTLTabBarItem : MONHook
 
 @end
